@@ -3,8 +3,13 @@
  */
 
 import {Component} from 'angular2/core';
+import {NavbarComponent} from './navbar.component';
+
 @Component({
     selector: 'my-app',
-    template: '<h1>My First Angular 2 App Good</h1>'
+    directives: [NavbarComponent],
+    template: `
+    <my-navbar></my-navbar>
+    `
 })
 export class AppComponent { }

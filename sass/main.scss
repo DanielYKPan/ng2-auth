@@ -1,4 +1,10 @@
 @charset 'UTF-8';
 
 @import
+"utils/variables";
+
+@import
+"../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+@import
 'pages/home';

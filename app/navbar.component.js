@@ -1,7 +1,7 @@
 /**
- * app.component
+ * navbar.component
  */
-System.register(['angular2/core', './navbar.component'], function(exports_1, context_1) {
+System.register(["angular2/core"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -13,32 +13,28 @@ System.register(['angular2/core', './navbar.component'], function(exports_1, con
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, navbar_component_1;
-    var AppComponent;
+    var core_1;
+    var NavbarComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-            },
-            function (navbar_component_1_1) {
-                navbar_component_1 = navbar_component_1_1;
             }],
         execute: function() {
-            AppComponent = (function () {
-                function AppComponent() {
+            NavbarComponent = (function () {
+                function NavbarComponent() {
                 }
-                AppComponent = __decorate([
+                NavbarComponent = __decorate([
                     core_1.Component({
-                        selector: 'my-app',
-                        directives: [navbar_component_1.NavbarComponent],
-                        template: "\n    <my-navbar></my-navbar>\n    "
+                        selector: 'my-navbar',
+                        templateUrl: './app/navbar.component.html'
                     }), 
                     __metadata('design:paramtypes', [])
-                ], AppComponent);
-                return AppComponent;
+                ], NavbarComponent);
+                return NavbarComponent;
             }());
-            exports_1("AppComponent", AppComponent);
+            exports_1("NavbarComponent", NavbarComponent);
         }
     }
 });
-//# sourceMappingURL=app.component.js.map
+//# sourceMappingURL=navbar.component.js.map
