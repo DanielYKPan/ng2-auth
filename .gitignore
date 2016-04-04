@@ -1,0 +1,10 @@
+# Created by .ignore support plugin (hsz.mobi)
+
+/.idea
+/.sass-cache
+/.tscache
+/node_modules
+/typings
+/public
+/app/**/**.js
+/app/**/**.js.map
