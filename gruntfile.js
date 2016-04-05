@@ -28,6 +28,12 @@
                     options: {
                         livereload: true
                     }
+                },
+                clientHtml: {
+                    files: 'app/**/*.html',
+                    options: {
+                        livereload: true
+                    }
                 }
             },
             connect: {

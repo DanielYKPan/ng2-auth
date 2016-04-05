@@ -1,7 +1,7 @@
 /**
  * app.component
  */
-System.register(['angular2/core', './navbar.component'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', 'angular2/http', './home.component', './navbar.component', './login.component', './signin.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -13,15 +13,31 @@ System.register(['angular2/core', './navbar.component'], function(exports_1, con
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, navbar_component_1;
+    var core_1, router_1, router_2, http_1, home_component_1, navbar_component_1, login_component_1, signin_component_1;
     var AppComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
+            function (router_1_1) {
+                router_1 = router_1_1;
+                router_2 = router_1_1;
+            },
+            function (http_1_1) {
+                http_1 = http_1_1;
+            },
+            function (home_component_1_1) {
+                home_component_1 = home_component_1_1;
+            },
             function (navbar_component_1_1) {
                 navbar_component_1 = navbar_component_1_1;
+            },
+            function (login_component_1_1) {
+                login_component_1 = login_component_1_1;
+            },
+            function (signin_component_1_1) {
+                signin_component_1 = signin_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -30,9 +46,15 @@ System.register(['angular2/core', './navbar.component'], function(exports_1, con
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        directives: [navbar_component_1.NavbarComponent],
-                        template: "\n    <my-navbar></my-navbar>\n    "
-                    }), 
+                        directives: [navbar_component_1.NavbarComponent, router_1.ROUTER_DIRECTIVES],
+                        providers: [router_2.ROUTER_PROVIDERS, http_1.HTTP_PROVIDERS],
+                        template: "\n    <my-navbar></my-navbar>\n    <router-outlet></router-outlet>\n    "
+                    }),
+                    router_1.RouteConfig([
+                        { path: '/login', name: 'Login', component: login_component_1.LoginComponent },
+                        { path: '/signin', name: 'Signin', component: signin_component_1.SigninComponent },
+                        { path: '/', name: 'Home', component: home_component_1.HomeComponent }
+                    ]), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
                 return AppComponent;

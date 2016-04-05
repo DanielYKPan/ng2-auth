@@ -1,7 +1,7 @@
 /**
- * navbar.component
+ * github.service
  */
-System.register(["angular2/core", 'angular2/router'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/http'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -13,32 +13,33 @@ System.register(["angular2/core", 'angular2/router'], function(exports_1, contex
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1;
-    var NavbarComponent;
+    var core_1, http_1;
+    var GithubService;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (router_1_1) {
-                router_1 = router_1_1;
+            function (http_1_1) {
+                http_1 = http_1_1;
             }],
         execute: function() {
-            NavbarComponent = (function () {
-                function NavbarComponent() {
+            GithubService = (function () {
+                function GithubService(_http) {
+                    this._http = _http;
                 }
-                NavbarComponent = __decorate([
-                    core_1.Component({
-                        selector: 'my-navbar',
-                        directives: [router_1.ROUTER_DIRECTIVES],
-                        templateUrl: './app/navbar.component.html'
-                    }), 
-                    __metadata('design:paramtypes', [])
-                ], NavbarComponent);
-                return NavbarComponent;
+                GithubService.prototype.search = function (term) {
+                    var githubUrl = "https://api.github.com/search/users?q=" + term;
+                    return this._http.get(githubUrl).map(function (request) { return request.json().items; });
+                };
+                GithubService = __decorate([
+                    core_1.Injectable(), 
+                    __metadata('design:paramtypes', [http_1.Http])
+                ], GithubService);
+                return GithubService;
             }());
-            exports_1("NavbarComponent", NavbarComponent);
+            exports_1("GithubService", GithubService);
         }
     }
 });
-//# sourceMappingURL=navbar.component.js.map
+//# sourceMappingURL=github.service.js.map

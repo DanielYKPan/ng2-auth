@@ -1,0 +1,14 @@
+<div id="sidebar" class="col-sm-3">
+    <div class="search">
+        <input #term (keyup)="search(term.value)" class="form-control" placeholder='Search for users' />
+    </div>
+    <div class="list-group" *ngIf="term.value">
+        <a class="users list-group-item" *ngFor="#user of users | async">
+            <img class="img-circle" src="{{user.avatar_url}}"  />
+            <strong>{{user.login}}</strong>
+        </a>
+    </div>
+</div>
+<div id="main" class="col-sm-9">
+    <router-outlet></router-outlet>
+</div>
