@@ -1,9 +1,7 @@
 /**
  * app.component
  */
-System.register(['angular2/core', 'angular2/router', 'angular2/http', './home.component', './navbar.component', './login.component', './signin.component'], function(exports_1, context_1) {
-    "use strict";
-    var __moduleName = context_1 && context_1.id;
+System.register(['angular2/core', 'angular2/router', 'angular2/http', './github.component', './navbar.component', './login.component', './signin.component'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -13,7 +11,7 @@ System.register(['angular2/core', 'angular2/router', 'angular2/http', './home.co
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, router_2, http_1, home_component_1, navbar_component_1, login_component_1, signin_component_1;
+    var core_1, router_1, router_2, http_1, github_component_1, navbar_component_1, login_component_1, signin_component_1;
     var AppComponent;
     return {
         setters:[
@@ -27,8 +25,8 @@ System.register(['angular2/core', 'angular2/router', 'angular2/http', './home.co
             function (http_1_1) {
                 http_1 = http_1_1;
             },
-            function (home_component_1_1) {
-                home_component_1 = home_component_1_1;
+            function (github_component_1_1) {
+                github_component_1 = github_component_1_1;
             },
             function (navbar_component_1_1) {
                 navbar_component_1 = navbar_component_1_1;
@@ -51,14 +49,19 @@ System.register(['angular2/core', 'angular2/router', 'angular2/http', './home.co
                         template: "\n    <my-navbar></my-navbar>\n    <router-outlet></router-outlet>\n    "
                     }),
                     router_1.RouteConfig([
+                        {
+                            path: '/github/...',
+                            name: 'GitHub',
+                            component: github_component_1.GitHubComponent,
+                            useAsDefault: true
+                        },
                         { path: '/login', name: 'Login', component: login_component_1.LoginComponent },
-                        { path: '/signin', name: 'Signin', component: signin_component_1.SigninComponent },
-                        { path: '/', name: 'Home', component: home_component_1.HomeComponent }
+                        { path: '/signin', name: 'Signin', component: signin_component_1.SigninComponent }
                     ]), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
                 return AppComponent;
-            }());
+            })();
             exports_1("AppComponent", AppComponent);
         }
     }

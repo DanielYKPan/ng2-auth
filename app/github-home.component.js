@@ -1,5 +1,5 @@
 /**
- * signin.component
+ * github-home.component
  */
 System.register(["angular2/core"], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -12,27 +12,26 @@ System.register(["angular2/core"], function(exports_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var SigninComponent;
+    var GithubHomeComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            SigninComponent = (function () {
-                function SigninComponent() {
+            GithubHomeComponent = (function () {
+                function GithubHomeComponent() {
                 }
-                SigninComponent = __decorate([
+                GithubHomeComponent = __decorate([
                     core_1.Component({
-                        selector: 'my-signin',
-                        templateUrl: './app/signin.component.html'
+                        template: "<h1>Search for a Github user and view their profile</h1>"
                     }), 
                     __metadata('design:paramtypes', [])
-                ], SigninComponent);
-                return SigninComponent;
+                ], GithubHomeComponent);
+                return GithubHomeComponent;
             })();
-            exports_1("SigninComponent", SigninComponent);
+            exports_1("GithubHomeComponent", GithubHomeComponent);
         }
     }
 });
-//# sourceMappingURL=signin.component.js.map
+//# sourceMappingURL=github-home.component.js.map
